@@ -32,3 +32,7 @@ function NavBar({ setUser }) {
 }
 
 export default NavBar;
+
+// {/* <span class="navbar-text">
+//     Journal Your Thoughts
+// </span> */}

@@ -26,23 +26,31 @@ function Login({ setUser }) { // hello help
         <div>
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
-                <label htmlFor="username">Username</label>
-                <input
-                    type="text"
-                    id="username"
-                    autoComplete="off"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="password">Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    autoComplete="current-password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Login</button>
+                <div class="form-group">
+                    <label htmlFor="username">Username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        autoComplete="off"
+                        value={username}
+                        placeholder="Enter Username"
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div class="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        autoComplete="current-password"
+                        value={password}
+                        placeholder="Enter Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button type="submit" class="btn btn-outline-dark">Login</button>
             </form>
         </div>
     )
