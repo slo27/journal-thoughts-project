@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     def index
         render json: User.all, status: :ok
     end
+
+    def show
+        render json: find_user, status: :ok
+    end
+    
     
     def create
         new_user = User.create!(user_params)
@@ -27,7 +32,7 @@ class UsersController < ApplicationController
         params.permit(:username, :password, :password_confirmation)
     end
 
-    def user_data_invalid(e)
+    def user_data_invalid(e) # error_hash
         render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 end
