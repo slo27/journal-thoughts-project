@@ -17,6 +17,7 @@ function App() {
   const [journal, setJournal] = useState([]);
   const [mood, setMood] = useState([]);
   
+  
 
   return (
     <div className="App">
