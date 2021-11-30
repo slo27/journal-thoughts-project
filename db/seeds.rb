@@ -19,8 +19,8 @@ User.create(username: "Sandy", password: "password")
 puts "Seeding Journals...📓📓📓"
 
 # Journal.group("journals.created_at::date")
-Journal.create(user_id: 1, timestamps: true, content: "This is my journal... It's going okay.")
-Journal.create(user_id: 1, timestamps: true, content: "This is my second entry... It's getting better.")
+Journal.create(user_id: 1, timestamps: DateTime.now.in_time_zone, content: "This is my journal... It's going okay.")
+Journal.create(user_id: 1, timestamps: DateTime.now.in_time_zone, content: "This is my second entry... It's getting better.")
 
 puts "Seeding Moods...🗰🗰🗰"
 
