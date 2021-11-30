@@ -42,6 +42,7 @@ function Signup(props) {
         navigate('/');
     }
 
+    
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -57,7 +58,7 @@ function Signup(props) {
                             value={username}
                             placeholder="Username"
                             onChange={(e) => setUsername(e.target.value)}
-                        />
+                            />
                     </div>
                     <div class="form-group col-md-3">
                         <label htmlFor="email">Email</label>
@@ -69,7 +70,7 @@ function Signup(props) {
                             value={email}
                             placeholder="Email address"
                             onChange={(e) => setEmail(e.target.value)}
-                        />
+                            />
                     </div>
                 </div>
                 <div class="form-row">
@@ -83,7 +84,7 @@ function Signup(props) {
                             value={password}
                             placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
-                        />
+                            />
                     </div>
                     <div class="form-group col-md-3">
                         <label htmlFor="password-confirmation">Password Confirmation</label>
@@ -95,7 +96,7 @@ function Signup(props) {
                             value={password_confirmation}
                             placeholder="Password Confirmation"
                             onChange={(e) => setPasswordConfirmation(e.target.value)}
-                        />
+                            />
                     </div>
                 </div>
                 <div class="form-row">
@@ -109,7 +110,7 @@ function Signup(props) {
                             value={first_name}
                             placeholder="First Name"
                             onChange={(e) => setFirstName(e.target.value)}
-                        />
+                            />
                     </div>
                     <div class="form-group col-md-3">
                         <label htmlFor="last_name">Last Name</label>
@@ -121,7 +122,7 @@ function Signup(props) {
                             value={last_name}
                             placeholder="Last Name"
                             onChange={(e) => setLastName(e.target.value)}
-                        />
+                            />
                     </div>
                 </div>
                 {/* button is reverting to primary on refresh? */}
@@ -132,3 +133,13 @@ function Signup(props) {
 }
 
 export default Signup;
+
+
+// constructor (props) {
+//     super(props);
+//     this.state = { 
+//         updateable: false,
+//         name: props.name,
+//         status: props.status
+//     },
+// }

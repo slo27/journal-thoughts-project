@@ -1,6 +1,6 @@
 class MoodsController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with: :mood_data_invalid
-    rescue_from ActiveRecord::RecordNotFound, with: :mood_data_not_found
+    # rescue_from ActiveRecord::RecordInvalid, with: :mood_data_invalid
+    # rescue_from ActiveRecord::RecordNotFound, with: :mood_data_not_found
 
     def index
         render json: Mood.all, status: :ok
@@ -38,11 +38,11 @@ class MoodsController < ApplicationController
         params.permit(:user_id, :journal_id, :description)
     end
     
-    def mood_data_invalid(e) # error_hash
-        render json: { errors: e.record.errors.full_message }, status: :unprocessable_entity
-    end
+    # def mood_data_invalid(e) # error_hash
+    #     render json: { errors: e.record.errors.full_message }, status: :unprocessable_entity
+    # end
 
-    def mood_data_not_found
-        render json: { error: "Mood not found, please try again."}, status: :not_found
-    end
+    # def mood_data_not_found
+    #     render json: { error: "Mood not found, please try again."}, status: :not_found
+    # end
 end
