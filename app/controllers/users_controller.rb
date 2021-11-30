@@ -16,6 +16,12 @@ class UsersController < ApplicationController
         render json: new_user, status: :created
     end
 
+    def update
+        this_user = find_user
+        this_user.update!(user_params)
+        render json: this_user, status: :ok
+    end
+
     def destroy
         this_user = find_user
         this_user.destroy

@@ -1,6 +1,15 @@
-function UserProfile() {
+import { useState, useEffect } from "react";
+
+function UserProfile({ setUser }) {
+
+    useEffect(() => {
+        fetch("/me")
+    }, []);
+
     return (
-        <p>This is the user profile component.</p>
+        <div className="user-profile">
+            <p>this is user component</p>
+        </div>
     )
 }
 
