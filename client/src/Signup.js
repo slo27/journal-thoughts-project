@@ -43,59 +43,91 @@ function Signup(props) {
     }
 
     return (
-        <>
+        <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input 
-                    type="text"
-                    id="username"
-                    autoComplete="off"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="password">Password</label>
-                <input 
-                    type="password"
-                    id="password"
-                    autoComplete="off"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <label htmlFor="password-confirmation">Password Confirmation</label>
-                <input 
-                    type="password"
-                    id="password-confirmation"
-                    autoComplete="off"
-                    value={password_confirmation}
-                    onChange={(e) => setPasswordConfirmation(e.target.value)}
-                />
-                <label htmlFor="first_name">First Name</label>
-                <input 
-                    type="text"
-                    id="first_name"
-                    autoComplete="off"
-                    value={first_name}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-                <label htmlFor="last_name">Last Name</label>
-                <input 
-                    type="text"
-                    id="last_name"
-                    autoComplete="off"
-                    value={last_name}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-                <label htmlFor="email">Email</label>
-                <input 
-                    type="text"
-                    id="email"
-                    autoComplete="off"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <Button type="submit">Signup</Button>
+                <h1>Sign Up</h1>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label htmlFor="username">Username</label>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            autoComplete="off"
+                            value={username}
+                            placeholder="Username"
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label htmlFor="email">Email</label>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            id="email"
+                            autoComplete="off"
+                            value={email}
+                            placeholder="Email address"
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            autoComplete="off"
+                            value={password}
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label htmlFor="password-confirmation">Password Confirmation</label>
+                        <input 
+                            type="password"
+                            class="form-control"
+                            id="password-confirmation"
+                            autoComplete="off"
+                            value={password_confirmation}
+                            placeholder="Password Confirmation"
+                            onChange={(e) => setPasswordConfirmation(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label htmlFor="first_name">First Name</label>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            id="first_name"
+                            autoComplete="off"
+                            value={first_name}
+                            placeholder="First Name"
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label htmlFor="last_name">Last Name</label>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            id="last_name"
+                            autoComplete="off"
+                            value={last_name}
+                            placeholder="Last Name"
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
+                    </div>
+                </div>
+                {/* button is reverting to primary on refresh? */}
+                <Button type="submit" class="btn btn-outline-dark">Sign Up</Button>
             </form>
-        </>
+        </div>
     )
 }
 
