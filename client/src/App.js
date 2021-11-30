@@ -10,6 +10,9 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [email, setEmail] = useState("");
   const [journal, setJournal] = useState([]);
   const [mood, setMood] = useState([]);
   
