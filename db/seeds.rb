@@ -14,7 +14,7 @@ puts "Seeding...🌱🌱🌱"
 
 puts "Seeding Users...😺😺😺"
 
-User.create(username: "Sandy", password: "password")
+User.create(username: "slo", password: "password", first_name: "Sandy", last_name: "Lo", email: "slo@example.com")
 
 puts "Seeding Journals...📓📓📓"
 
