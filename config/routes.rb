@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :moods
   resources :users
 
-  # get '/me', to: 'users#show'
   get '/me', to: 'sessions#show'
-  # post '/login', to: 'sessions#create'
-  # post '/logout', to: 'sessions#destroy'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end
