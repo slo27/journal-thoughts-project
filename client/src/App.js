@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import Login from "./Login";
+import Signup from "./Signup"
 import UserProfile from "./UserProfile";
 
 function App() {
@@ -22,8 +23,25 @@ function App() {
       <NavBar setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/me" element={<UserProfile />} />
-        <Route path="/login" element={<Login setUser={setUser}/>} />
+        <Route path="me" element={<UserProfile />} />
+        <Route path="login" element={<Login setUser={setUser}/>} />
+        <Route path="signup" element={
+          <Signup 
+          username={username} 
+          password={password}
+          password_confirmation={password_confirmation}
+          first_name={first_name}
+          last_name={last_name}
+          email={email}
+          setUsername={setUsername}
+          setPassword={setPassword}
+          setPasswordConfirmation={setPasswordConfirmation}
+          setFirstName={setFirstName}
+          setLastName={setLastName}
+          setEmail={setEmail}
+          setUser={setUser} 
+          />} 
+        />
       </Routes>
     </div>
   );
