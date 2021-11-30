@@ -13,7 +13,7 @@ class MoodsController < ApplicationController
     def create
         new_mood = Mood.create!(mood_params)
         session[:mood_id] = new_mood.id
-        render json: this_mood, status: :ok
+        render json: this_mood, status: :created
     end
 
     def update
