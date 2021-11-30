@@ -45,6 +45,7 @@ function Signup(props) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                <h1>Sign Up</h1>
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label htmlFor="username">Username</label>
@@ -124,7 +125,7 @@ function Signup(props) {
                     </div>
                 </div>
                 {/* button is reverting to primary on refresh? */}
-                <Button type="submit" class="btn btn-outline-dark">Signup</Button>
+                <Button type="submit" class="btn btn-outline-dark">Sign Up</Button>
             </form>
         </div>
     )
