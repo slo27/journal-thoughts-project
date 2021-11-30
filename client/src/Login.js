@@ -31,7 +31,7 @@ function Login({ setUser }) { // hello help
                     type="text"
                     id="username"
                     autoComplete="off"
-                    value="{username}"
+                    value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 <label htmlFor="password">Password</label>
@@ -39,7 +39,7 @@ function Login({ setUser }) { // hello help
                     type="password"
                     id="password"
                     autoComplete="current-password"
-                    value="{password}"
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit">Login</button>

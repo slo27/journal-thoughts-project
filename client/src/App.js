@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -10,6 +10,8 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
+  const [journal, setJournal] = useState([]);
+  const [mood, setMood] = useState([]);
   
 
   return (
