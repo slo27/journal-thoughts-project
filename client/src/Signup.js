@@ -19,16 +19,6 @@ function Signup(props) {
         setUser
     } = props;
 
-    const { handleSubmit, control, setValue} = useForm({ mode: 'onBlur' })
-
-    useEffect(() => {
-        if (userData) {
-            setValue([
-                {username: userData.username}
-            ])
-        }
-    })
-
     function handleSubmit(e) {
         e.preventDefault();
         fetch("/users", {
