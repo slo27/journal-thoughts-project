@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 
-function UserProfile({ setUser }) {
-
-    useEffect(() => {
-        fetch("/me")
-    }, []);
-
+function UserProfile(props) {
     return (
-        <div className="user-profile">
-            <p>this is user component</p>
+        <div>
+            <div className="user-profile">
+                <p>this is user component</p>
+            </div>
         </div>
     )
 }
