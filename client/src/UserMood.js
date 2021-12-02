@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-
+import UserProfile from './UserProfile';
 
 function UserMood(props) {
     const [userMoods, setUserMoods] = useState([]);
@@ -18,11 +18,12 @@ function UserMood(props) {
             setUserMoods(data.moods);
         }
     }
-
+    
     function renderUserMoods() {
         return userMoods.map((userMood) => {
+            console.log(userMood)
             return (
-                <UserMood 
+                <UserProfile 
                     key={userMood.id}
                     moodDescription={userMood.description}
                 />
@@ -32,6 +33,7 @@ function UserMood(props) {
 
     return(
         <div className="mood-container">
+            <h1>Mood</h1>
             {renderUserMoods()}
         </div>
     )
