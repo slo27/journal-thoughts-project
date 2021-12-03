@@ -7,7 +7,7 @@ import Signup from "./Signup"
 import UserProfile from "./UserProfile";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
@@ -17,16 +17,14 @@ function App() {
   const [journal, setJournal] = useState([]);
   const [mood, setMood] = useState([]);
   
-  
-
   return (
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route path="/" element={<Home mood={mood} setMood={setMood} journal={journal} setJournal={setJournal}/>} />
-        <Route path="me" element={<UserProfile user={user}/>} />
-        <Route path="login" element={<Login setUser={setUser}/>} />
-        <Route path="signup" element={
+        <Route exact path="/" element={<Home mood={mood} setMood={setMood} journal={journal} setJournal={setJournal}/>} />
+        <Route path="me" element={<UserProfile />} />
+        <Route exact path="login" element={<Login setUser={setUser}/>} />
+        <Route exact path="signup" element={
           <Signup 
           username={username} 
           password={password}
