@@ -7,6 +7,7 @@ import Signup from "./Signup"
 import UserProfile from "./UserProfile";
 
 function App() {
+  const [token, setToken] = useState();
   const [user, setUser] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +18,9 @@ function App() {
   const [journal, setJournal] = useState([]);
   const [mood, setMood] = useState([]);
   
-  
+  if(!user) {
+    return <Login setUser={setUser} />
+  }
 
   return (
     <div className="App">
