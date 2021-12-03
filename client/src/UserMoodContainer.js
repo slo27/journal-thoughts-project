@@ -11,11 +11,9 @@ function UserMoodContainer(props) {
 
     useEffect(() => {
         fetch(`/moods/${id}`)
-        // fetch("/moods/")
         .then((r) => r.json())
         .then((data) => checkUserMoodData(data)) // {id: 1, user_id: 1, journal_id: 1, description: 'Foggy'}
     }, [id]);
-    // }, []);
 
     function checkUserMoodData(data) {
         if (!!data.moods) {
@@ -38,7 +36,6 @@ function UserMoodContainer(props) {
 
     return(
         <div className="mood-container">
-            <h1>Mood</h1>
             <div>{renderUserMoods()}</div>
         </div>
     )
