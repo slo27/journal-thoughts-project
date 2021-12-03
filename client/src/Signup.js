@@ -129,9 +129,9 @@ function Signup(props) {
                 {/* button is reverting to primary on refresh? */}
                 <Button type="submit" class="btn btn-outline-dark">Sign Up</Button>
                 <div className="login-wrapper">
-                    <Link to="/login">
-                        Already have an account? Login Here
-                    </Link>
+                    <p>
+                        Don't have an account? <Link to="/login">Sign Up</Link>
+                    </p>
                 </div>
             </form>
         </div>
