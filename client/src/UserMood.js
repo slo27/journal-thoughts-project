@@ -12,14 +12,14 @@ function UserMood(props) {
     useEffect(() => {
     fetch(`/moods/${id}`)
         .then((r) => r.json())
-        .then((data) => checkUserMoodsData(data))
+        .then((data) => console.log(data))
     }, [id]);
 
-    function checkUserMoodsData(data) {
-        if (!!data.moods) {
-            setUserMoods(data.moods);
-        }
-    }
+    // function checkUserMoodsData(data) {
+    //     if (!!data.moods) {
+    //         setUserMoods(data.moods);
+    //     }
+    // }
     
     // function renderUserMoods() {
     //     return userMoods.map((userMood) => {
