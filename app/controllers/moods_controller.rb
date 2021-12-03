@@ -3,6 +3,7 @@ class MoodsController < ApplicationController
     #     render json: Mood.all
     # end
 
+    # get /moods/:id
     def show
         user_mood = Mood.find(session[:user_id])
         render json: user_mood, status: :ok

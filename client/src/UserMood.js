@@ -1,41 +1,11 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-
-
-function UserMood(props) {
-    const [userMoods, setUserMoods] = useState([]);
-
-    let id = props.user_id;
-    
-    console.log("check props", props)
-
-    useEffect(() => {
-    fetch(`/moods/${id}`)
-        .then((r) => r.json())
-        .then((data) => console.log(data))
-    }, [id]);
-
-    // function checkUserMoodsData(data) {
-    //     if (!!data.moods) {
-    //         setUserMoods(data.moods);
-    //     }
-    // }
-    
-    // function renderUserMoods() {
-    //     return userMoods.map((userMood) => {
-    //         return (
-    //             <UserProfile 
-    //                 key={userMood.id}
-    //                 moodDescription={userMood.description}
-    //             />
-    //         )
-    //     })
-    // }
-
+function UserMood() {
     return(
-        <div className="mood-container">
-            <h1>Mood</h1>
-            {/* {renderUserMoods()} */}
+        <div className="card">
+            <div className="card-body">
+                <h1>Mood</h1>
+                {/* <p>{props.username}</p>
+                <p>{props.description}</p> */}
+            </div>
         </div>
     )
 }

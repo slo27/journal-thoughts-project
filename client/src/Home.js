@@ -1,5 +1,4 @@
-import UserMood from './UserMood'
-
+import UserMoodContainer from './UserMoodContainer';
 
 function Home() {
     return (
@@ -7,7 +6,7 @@ function Home() {
             <h1>This is Home.</h1>
             <div className="container">
                 <div className="col">
-                    <UserMood />
+                    <UserMoodContainer />
                 </div>
 
             </div>
