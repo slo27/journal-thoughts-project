@@ -1,7 +1,11 @@
 class MoodsController < ApplicationController
-    # def index
-    #     render json: Mood.all
-    # end
+    def index
+        render json: Mood.all, status: :ok
+    end
+
+    def show
+        render json: Mood.find(params[:id])
+    end
 
     # get /moods/:id
     def show
