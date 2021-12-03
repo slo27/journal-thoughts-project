@@ -11,7 +11,7 @@ function NavBar({ setUser }) {
         .then(() => {
             setUser();
         });
-        navigate('/');
+        navigate('/login');
     }
     return (
         <Navbar bg="light" expand="lg">

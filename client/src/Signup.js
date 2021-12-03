@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import './Signup.css';
 
 function Signup(props) {
     const navigate = useNavigate();
@@ -44,11 +45,11 @@ function Signup(props) {
 
     
     return (
-        <div>
+        <div className="signup-wrapper">
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-                <h1>Sign Up</h1>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
+                <div className="form-row">
+                    <div class="form-group col-md-12">
                         <label htmlFor="username">Username</label>
                         <input 
                             type="text"
@@ -60,7 +61,7 @@ function Signup(props) {
                             onChange={(e) => setUsername(e.target.value)}
                             />
                     </div>
-                    <div class="form-group col-md-3">
+                    <div className="form-group col-md-12">
                         <label htmlFor="email">Email</label>
                         <input 
                             type="text"
@@ -73,8 +74,8 @@ function Signup(props) {
                             />
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
+                <div className="form-row">
+                    <div className="form-group col-md-12">
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password"
@@ -86,7 +87,7 @@ function Signup(props) {
                             onChange={(e) => setPassword(e.target.value)}
                             />
                     </div>
-                    <div class="form-group col-md-3">
+                    <div className="form-group col-md-12">
                         <label htmlFor="password-confirmation">Password Confirmation</label>
                         <input 
                             type="password"
@@ -99,8 +100,8 @@ function Signup(props) {
                             />
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
+                <div className="form-row">
+                    <div className="form-group col-md-12">
                         <label htmlFor="first_name">First Name</label>
                         <input 
                             type="text"
@@ -112,7 +113,7 @@ function Signup(props) {
                             onChange={(e) => setFirstName(e.target.value)}
                             />
                     </div>
-                    <div class="form-group col-md-3">
+                    <div className="form-group col-md-12">
                         <label htmlFor="last_name">Last Name</label>
                         <input 
                             type="text"
@@ -127,6 +128,11 @@ function Signup(props) {
                 </div>
                 {/* button is reverting to primary on refresh? */}
                 <Button type="submit" class="btn btn-outline-dark">Sign Up</Button>
+                <div className="login-wrapper">
+                    <Link to="/login">
+                        Already have an account? Login Here
+                    </Link>
+                </div>
             </form>
         </div>
     )

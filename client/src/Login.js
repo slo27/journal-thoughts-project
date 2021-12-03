@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './Login.css';
 
 function Login({ setUser }) { 
@@ -52,6 +52,11 @@ function Login({ setUser }) {
                     />
                 </div>
                 <button type="submit" class="btn btn-outline-dark">Login</button>
+                <div className="signup-wrapper">
+                    <p>
+                        Don't have an account? <Link to="/signup">Sign Up</Link>
+                    </p>
+                </div>
             </form>
         </div>
     )
