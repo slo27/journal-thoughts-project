@@ -23,8 +23,8 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="me" element={<UserProfile />} />
+        <Route path="/" element={<Home mood={mood} setMood={setMood} journal={journal} setJournal={setJournal}/>} />
+        <Route path="me" element={<UserProfile user={user}/>} />
         <Route path="login" element={<Login setUser={setUser}/>} />
         <Route path="signup" element={
           <Signup 

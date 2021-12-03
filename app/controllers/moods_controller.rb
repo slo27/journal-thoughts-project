@@ -1,11 +1,17 @@
 class MoodsController < ApplicationController
-    # def index
-    #     render json: Mood.all
-    # end
+    def index
+        render json: Mood.all, status: :ok
+    end
 
     def show
+        render json: Mood.find(params[:id]), status: :ok
+    end
+
+    # get /moods/:id
+    def show
         user_mood = Mood.find(session[:user_id])
-        render json: user_mood, status: :ok
+        # render json: user_mood, status: :ok
+        render json: User.find(user_mood.user_id), status: :ok
         # user_mood = Mood.find(params[:id])
         # render json: user_mood, status: :ok
     end
@@ -17,7 +23,7 @@ class MoodsController < ApplicationController
     private
 
     def mood_create_params
-        params.permit(:user_id, :journal_id, :description)
+        params.permit(:id, :user_id, :journal_id, :description)
     end
 
     # def index
