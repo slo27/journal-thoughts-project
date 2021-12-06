@@ -5,6 +5,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup"
 import UserProfile from "./UserProfile";
+import NewMood from "./NewMood";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,43 +19,13 @@ function App() {
   const [selectedJournal, setSelectedJournal] = useState({content: ' '})
   const [mood, setMood] = useState([]);
   const [selectedMood, setSelectedMood] = useState({description: ' '});
-  
-  // useEffect(() => {
-  //   getMoods();
-  // }, [moods])
-
-  // const getMoods = () => {
-  //   fetch("/moods")
-  //     .then(r => r.json())
-  //     .then((data) => setMoodsOnLoad(data.reverse()))
-  // }
-
-  // const setMoodsOnLoad = (moods) => {
-  //   setMoods(moods)
-  //   setSelectedMoods(moods[0]);
-  // }
-
-  // useEffect(() => {
-  //   getJournals();
-  // }, [])
-
-  // const getJournals = () => {
-  //   fetch("/journals")
-  //     .then(r => r.json())
-  //     .then((data) => setJournalsOnLoad("journal data", data))
-  // }
-
-  // const setJournalsOnLoad = (journals) => {
-  //   setJournals(journals)
-  //   setSelectedJournal(journals[0]);
-  // }
 
   return (
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
         <Route exact path="/" element={<Home setUser={setUser} mood={mood} setMood={setMood} journal={journal} />} />
-        {/* <Route exact path="/mood" element={<UserMood />} /> */}
+        <Route path="/mood" element={<NewMood />} />
         <Route path="me" element={<UserProfile />} />
         <Route exact path="login" element={<Login setUser={setUser}/>} />
         <Route exact path="signup" element={
