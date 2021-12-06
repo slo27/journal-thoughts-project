@@ -1,14 +1,12 @@
 import UserMoodContainer from './UserMoodContainer';
 
-function Home() {
+function Home({moods, user}) {
     return (
         <div>
-            <h1>This is Home</h1>
-            <div className="container">
+            <div className="row align-items-start">
                 <div className="col">
-                    <UserMoodContainer />
+                    <UserMoodContainer moods={moods} user={user}/>
                 </div>
-
             </div>
         </div>
     )

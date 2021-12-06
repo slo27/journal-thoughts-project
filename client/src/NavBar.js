@@ -13,6 +13,7 @@ function NavBar({ setUser }) {
         });
         navigate('/login');
     }
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -20,6 +21,9 @@ function NavBar({ setUser }) {
                 <Navbar.Toggle aria-controls="journal-navbar" />
                 <Navbar.Collapse id="journal-navbar">
                     <Nav className="me-auto">
+                        <Nav.Link as={Link} to="usermood">My Mood</Nav.Link>
+                        <Nav.Link as={Link} to="mood">Create Mood</Nav.Link>
+                        <Nav.Link as={Link} to="journal">Create Journal</Nav.Link>
                         <Nav.Link as={Link} to="me">My Profile</Nav.Link>
                         <Nav.Link as={Link} to="login">Login</Nav.Link>
                         <Nav.Link as={Link} to="signup">Sign Up</Nav.Link>

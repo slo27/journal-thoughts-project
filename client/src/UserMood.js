@@ -1,10 +1,12 @@
 function UserMood(props) {
     return(
-        <div className="card">
-            <div className="card-body">
-                <h1>Mood</h1>
-                <p>{props.moodDesc}</p>
-                <p>{props.journal_id}</p>
+        <div>
+            <h1>Mood</h1>
+            <div className="card">
+                <div className="card-body">
+                    <p>{props.journal_id}</p>
+                    <p>{props.moodDesc}</p>
+                </div>
             </div>
         </div>
     )
