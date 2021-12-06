@@ -40,6 +40,7 @@ function Signup(props) {
                 r.json().then((userData) => setUser(userData));
             }
         });
+        e.target.reset();
         navigate('/');
     }
 
@@ -130,7 +131,7 @@ function Signup(props) {
                 <Button type="submit" class="btn btn-outline-dark">Sign Up</Button>
                 <div className="login-wrapper">
                     <p>
-                        Don't have an account? <Link to="/login">Sign Up</Link>
+                        Already have an account? <Link to="/login">Login</Link>
                     </p>
                 </div>
             </form>

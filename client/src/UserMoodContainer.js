@@ -7,12 +7,12 @@ function UserMoodContainer(props) {
 
     let id = props.user_id;
     
-    console.log("check props", props)
+    console.log("check mood props", props)
 
     useEffect(() => {
         fetch(`/moods/${id}`)
-        .then((r) => r.json())
-        .then((data) => checkUserMoodData(data)) // {id: 1, user_id: 1, journal_id: 1, description: 'Foggy'}
+            .then((r) => r.json())
+            .then((data) => checkUserMoodData(data)) // {id: 1, user_id: 1, journal_id: 1, description: 'Foggy'}
     }, [id]);
 
     function checkUserMoodData(data) {
@@ -32,7 +32,7 @@ function UserMoodContainer(props) {
                 />
             )
         })
-    }
+    }     
 
     return(
         <div className="mood-container">
