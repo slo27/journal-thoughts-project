@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -15,13 +15,43 @@ function App() {
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [journal, setJournal] = useState([]);
-  const [mood, setMood] = useState([]);
+  const [moods, setMoods] = useState([]);
+  const [selectedMoods, setSelectedMoods] = useState({description: ' '});
   
+  useEffect(() => {
+    getMoods();
+  }, [])
+
+  const getMoods = () => {
+    fetch("/moods")
+      .then(r => r.json())
+      .then((data) => setMoodsOnLoad(data))
+  }
+
+  const setMoodsOnLoad = (moods) => {
+    setMoods(moods)
+    setSelectedMoods(moods)
+  }
+
+  // const createNewMood = (e, newMoodData) => {
+  //   e.preventDefault();
+  //   fetch("/moods", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       "description": newMoodData.description
+  //     })
+  //   }).then(() => getMoods)
+  //   e.target.reset();
+  // }
+
   return (
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route exact path="/" element={<Home mood={mood} setMood={setMood} journal={journal} setJournal={setJournal}/>} />
+        <Route exact path="/" element={<Home moods={moods} setMood={setMoods} journal={journal} setJournal={setJournal}/>} />
         <Route path="me" element={<UserProfile />} />
         <Route exact path="login" element={<Login setUser={setUser}/>} />
         <Route exact path="signup" element={

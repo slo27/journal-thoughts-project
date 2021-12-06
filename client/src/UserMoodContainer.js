@@ -7,7 +7,7 @@ function UserMoodContainer(props) {
 
     let id = props.user_id;
     
-    console.log("check mood props", props)
+    console.log("check mood props", props);
 
     useEffect(() => {
         fetch(`/moods/${id}`)
