@@ -15,43 +15,46 @@ function App() {
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [journal, setJournal] = useState([]);
-  const [moods, setMoods] = useState([]);
-  const [selectedMoods, setSelectedMoods] = useState({description: ' '});
+  const [selectedJournal, setSelectedJournal] = useState({content: ' '})
+  const [mood, setMood] = useState([]);
+  const [selectedMood, setSelectedMood] = useState({description: ' '});
   
-  useEffect(() => {
-    getMoods();
-  }, [])
+  // useEffect(() => {
+  //   getMoods();
+  // }, [moods])
 
-  const getMoods = () => {
-    fetch("/moods")
-      .then(r => r.json())
-      .then((data) => setMoodsOnLoad(data))
-  }
+  // const getMoods = () => {
+  //   fetch("/moods")
+  //     .then(r => r.json())
+  //     .then((data) => setMoodsOnLoad(data.reverse()))
+  // }
 
-  const setMoodsOnLoad = (moods) => {
-    setMoods(moods)
-    setSelectedMoods(moods)
-  }
+  // const setMoodsOnLoad = (moods) => {
+  //   setMoods(moods)
+  //   setSelectedMoods(moods[0]);
+  // }
 
-  // const createNewMood = (e, newMoodData) => {
-  //   e.preventDefault();
-  //   fetch("/moods", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify({
-  //       "description": newMoodData.description
-  //     })
-  //   }).then(() => getMoods)
-  //   e.target.reset();
+  // useEffect(() => {
+  //   getJournals();
+  // }, [])
+
+  // const getJournals = () => {
+  //   fetch("/journals")
+  //     .then(r => r.json())
+  //     .then((data) => setJournalsOnLoad("journal data", data))
+  // }
+
+  // const setJournalsOnLoad = (journals) => {
+  //   setJournals(journals)
+  //   setSelectedJournal(journals[0]);
   // }
 
   return (
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route exact path="/" element={<Home moods={moods} setMood={setMoods} journal={journal} setJournal={setJournal}/>} />
+        <Route exact path="/" element={<Home setUser={setUser} mood={mood} setMood={setMood} journal={journal} />} />
+        {/* <Route exact path="/mood" element={<UserMood />} /> */}
         <Route path="me" element={<UserProfile />} />
         <Route exact path="login" element={<Login setUser={setUser}/>} />
         <Route exact path="signup" element={
@@ -63,7 +66,7 @@ function App() {
           last_name={last_name}
           email={email}
           setUsername={setUsername}
-          setPassword={setPassword}
+          setPassword={setPassword} 
           setPasswordConfirmation={setPasswordConfirmation}
           setFirstName={setFirstName}
           setLastName={setLastName}

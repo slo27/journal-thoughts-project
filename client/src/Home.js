@@ -3,12 +3,11 @@ import UserMoodContainer from './UserMoodContainer';
 function Home() {
     return (
         <div>
-            <h1>This is Home</h1>
+            <h1>Home Component</h1>
             <div className="container">
                 <div className="col">
                     <UserMoodContainer />
                 </div>
-
             </div>
         </div>
     )
