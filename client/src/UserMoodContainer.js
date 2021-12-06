@@ -27,7 +27,7 @@ function UserMoodContainer(props) {
             return (
                 <UserMood 
                     key={userMood.id}
-                    journal_idd={userMood.journal_id}
+                    journal_id={userMood.journal_id}
                     moodDesc={userMood.description}
                 />
             )
