@@ -5,12 +5,12 @@ import UserMood from './UserMood';
 function UserMoodContainer(props) {
     const [userMoods, setUserMoods] = useState([]);
 
-    let id = props.user_id;
+    let id = props.user.id;
     
     console.log("check mood props", props);
 
     useEffect(() => {
-        fetch(`/moods/${id}`)
+        fetch(`/users/${id}`)
             .then((r) => r.json())
             .then((data) => checkUserMoodData(data)) // {id: 1, user_id: 1, journal_id: 1, description: 'Foggy'}
     }, [id]);
@@ -41,4 +41,4 @@ function UserMoodContainer(props) {
     )
 }
 
-export default UserMoodContainer;
+export default UserMoodContainer; 

@@ -1,5 +1,4 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import './Signup.css';
 
 function Signup(props) {
@@ -54,7 +53,7 @@ function Signup(props) {
                         <label htmlFor="username">Username</label>
                         <input 
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="username"
                             autoComplete="off"
                             value={username}
@@ -66,7 +65,7 @@ function Signup(props) {
                         <label htmlFor="email">Email</label>
                         <input 
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="email"
                             autoComplete="off"
                             value={email}
@@ -80,7 +79,7 @@ function Signup(props) {
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password"
-                            class="form-control"
+                            className="form-control"
                             id="password"
                             autoComplete="off"
                             value={password}
@@ -92,7 +91,7 @@ function Signup(props) {
                         <label htmlFor="password-confirmation">Password Confirmation</label>
                         <input 
                             type="password"
-                            class="form-control"
+                            className="form-control"
                             id="password-confirmation"
                             autoComplete="off"
                             value={password_confirmation}
@@ -106,7 +105,7 @@ function Signup(props) {
                         <label htmlFor="first_name">First Name</label>
                         <input 
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="first_name"
                             autoComplete="off"
                             value={first_name}
@@ -118,7 +117,7 @@ function Signup(props) {
                         <label htmlFor="last_name">Last Name</label>
                         <input 
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="last_name"
                             autoComplete="off"
                             value={last_name}
@@ -128,7 +127,7 @@ function Signup(props) {
                     </div>
                 </div>
                 {/* button is reverting to primary on refresh? */}
-                <Button type="submit" class="btn btn-outline-dark">Sign Up</Button>
+                <button type="submit" className="btn btn-outline-dark">Sign Up</button>
                 <div className="login-wrapper">
                     <p>
                         Already have an account? <Link to="/login">Login</Link>

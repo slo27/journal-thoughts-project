@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :users
 
   get '/me', to: 'sessions#show'
-  # get '/moods/', to: 'moods#show'
   get '/moods/:id', to: 'moods#show'
+  post '/moods', to: 'sessions#create'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 end

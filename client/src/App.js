@@ -16,32 +16,18 @@ function App() {
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [journal, setJournal] = useState([]);
-  const [selectedJournal, setSelectedJournal] = useState({content: ' '})
   const [moods, setMoods] = useState([]);
-  const [selectedMood, setSelectedMood] = useState({description: ' '});
-
-  // const createMood = (e, newMoodData) => {
-  //   e.preventDefault();
-  //   fetch(`/moods/${id}`, {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type" : "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       "description": newMoodData.description
-  //     })
-  //   }).then(() => newMoodData())
-  // }, [id]
+  const [description, setDescription] = useState([]);
 
   return (
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route exact path="/" element={<Home setUser={setUser} moods={moods} setMoods={setMoods} journal={journal} />} />
-        <Route path="/mood" element={<CreateMood />} />
+        <Route exact path="/usermood" element={<Home user={user} setUser={setUser} moods={moods} setMoods={setMoods} journal={journal} />} />
+        <Route path="/mood" element={<CreateMood moods={moods} setMoods={setMoods} description={description} setDescription={setDescription}/>} />
         <Route path="me" element={<UserProfile />} />
         <Route exact path="login" element={<Login setUser={setUser}/>} />
-        <Route exact path="signup" element={
+        <Route exact path="/" element={
           <Signup 
           username={username} 
           password={password}
