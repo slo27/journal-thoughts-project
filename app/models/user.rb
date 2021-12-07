@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :moods
-    has_many :journals, through: :moods
+    has_many :journals
 
     has_secure_password
 

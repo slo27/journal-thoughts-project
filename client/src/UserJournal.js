@@ -13,3 +13,4 @@ function UserJournal(props) {
 }
 
 export default UserJournal;
+

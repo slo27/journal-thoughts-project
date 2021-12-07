@@ -1,6 +1,6 @@
 import UserJournalContainer from './UserJournalContainer';
 
-function Entries({ journals, user}) {
+function Entries({ journals, user }) {
     return (
         <div>
             <div className="row justify-content-center">

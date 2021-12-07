@@ -1,24 +1,25 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import UserJournal from './UserJournal';
 
 function UserJournalContainer({ journals, user }) {
-    const [userJournals, setUserJournals] = useState([]);
+    // const [userJournals, setUserJournals] = useState([]);
 
-    useEffect(() => {
-        fetch(`/users/${user.id}`)
-            .then((r) => r.json())
-            .then((data) => checkUserJournalData(data))
-    }, [user.id]);
+    // console.log('checking user data', user)
+    // useEffect(() => {
+    //     fetch(`/users/${user.id}`)
+    //         .then((r) => r.json())
+    //         .then((data) => checkUserJournalData(data))
+    // }, []);
 
-    function checkUserJournalData(data) {
-        if (!!data.journals) {
-            setUserJournals(data.journals);
-        }
-    }
+    // function checkUserJournalData(data) {
+    //     if (!!data.journals) {
+    //         setUserJournals(data.journals);
+    //     }
+    // }
 
     function renderUserJournals() {
-        return userJournals.map((userJournal) => {
+        console.log(user);
+        return user.journals.map((userJournal) => {
             return (
                 <UserJournal 
                     key={userJournal.id}

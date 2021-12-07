@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CreateJournal({ setUser }) {
+function CreateJournal({ user, setUser }) {
     const navigate = useNavigate();
 
     const [content, setContent] = useState("");
@@ -13,12 +13,14 @@ function CreateJournal({ setUser }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                content: content
+                "content": content,
+                "user_id": user.id
             }),
         })
         .then(r => r.json())
         .then(data => {
-            setUser(data);
+            console.log(data);
+            console.log(user);
             navigate('/usermood')
         }) 
     }
