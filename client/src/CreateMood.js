@@ -24,30 +24,31 @@ function CreateMood(props) {
                 r.json().then((userData) => setUser(userData));
             }
         });
+        e.target.reset();
         navigate('/');
     }
 
     return (
         <div className="create-mood-wrappers">
             <h1>Create Mood</h1>
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-7">
-                            <form className="new-mood-form" onSubmit={(e) => createNewMood(e, {description: description})}>
-                                <label htmlFor="current-mood">Current Mood</label>
-                                <textarea
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-7">
+                        <form className="new-mood-form" onSubmit={(e) => createNewMood(e, {description: description})}>
+                            <label htmlFor="current-mood">Current Mood</label>
+                            <textarea
                                 type="text"
                                 className="form-control"
                                 value={description}
                                 placeholder="Current Mood"
                                 onChange={(e) => setDescription(e.target.value)}
                                 rows={5}
-                                />
-                            </form>
-                            <button type="submit" value="create" className="btn btn-outline-dark">Create</button>
-                        </div>
+                            />
+                        </form>
+                        <button type="submit" value="create" className="btn btn-outline-dark">Create</button>
                     </div>
                 </div>
+            </div>
         </div>
     )
 }

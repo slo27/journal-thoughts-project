@@ -23,11 +23,11 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route exact path="/usermood" element={<Home user={user} setUser={setUser} moods={moods} setMoods={setMoods} journals={journals} setJournals={setJournals} />} />
+        <Route path="/usermood" element={<Home user={user} setUser={setUser} moods={moods} setMoods={setMoods} journals={journals} setJournals={setJournals} />} />
         <Route path="/mood" element={<CreateMood moods={moods} setMoods={setMoods} description={description} setDescription={setDescription}/>} />
         <Route path="me" element={<UserProfile />} />
-        <Route exact path="login" element={<Login setUser={setUser}/>} />
-        <Route exact path="/" element={
+        <Route path="login" element={<Login setUser={setUser}/>} />
+        <Route path="/" element={
           <Signup 
           username={username} 
           password={password}
