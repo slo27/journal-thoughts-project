@@ -5,8 +5,6 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup"
 import UserProfile from "./UserProfile";
-import CreateMood from "./CreateMood";
-import CreateJournal from "./CreateJournal";
 import Entries from "./Entries";
 
 function App() {
@@ -18,8 +16,6 @@ function App() {
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [journals, setJournals] = useState([]);
-  const [moods, setMoods] = useState([]);
-  const [description, setDescription] = useState([]);
   const [content, setContent] = useState([]);
 
   return (
@@ -28,8 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <Home 
-            user={user} 
-            moods={moods} 
+            user={user}  
             journals={journals}
           />} 
         />
@@ -38,24 +33,7 @@ function App() {
             user={user} 
             setUser={setUser} 
             journals={journals} 
-            moods={moods} 
             content={content} 
-            description={description}
-            setDescription={setDescription}
-          />} 
-        />
-        <Route path="/journal" element={
-          <CreateJournal 
-            setUser={setUser} 
-            setJournals={setJournals} 
-            setContent={setContent} 
-          />} 
-        />
-        <Route path="/mood" element={
-          <CreateMood 
-            setUser={setUser} 
-            setMoods={setMoods} 
-            setDescription={setDescription}
           />} 
         />
         <Route path="me" element={<UserProfile />} />
