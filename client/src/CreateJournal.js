@@ -1,31 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CreateJournal(props) {
+function CreateJournal({ setUser }) {
     const navigate = useNavigate();
-    const { 
-        content,
-        setContent,
-        setUser
-    } = props;
 
-    function createNewJournal(e, newJournalData) {
-        e.preventDefault();
+    const [content, setContent] = useState("");
+
+    function createNewJournal() {
         fetch("/journals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                "content": newJournalData.content
+                content: content
             }),
-        }).then((r) => {
-            if (r.created) {
-                r.json().then((userData) => setUser(userData));
-            }
-        });
-        e.target.reset();
-        navigate('/usermood');
+        })
+        .then(r => r.json())
+        .then(data => {
+            setUser(data);
+            navigate('/usermood')
+        }) 
     }
 
     return (
@@ -37,15 +32,15 @@ function CreateJournal(props) {
                         <form className="new-journal-form" onSubmit={(e) => createNewJournal(e, {content: content})}>
                             <label htmlFor="today-journal">Today's Journal</label>
                             <textarea
+                                onChange={(e) => setContent(e.target.value)}
                                 type="text"
                                 className="form-control"
                                 value={content}
                                 placeholder="Enter content"
-                                onChange={(e) => setContent(e.target.value)}
                                 rows={15}
                             />
                         </form>
-                        <button type="submit" className="btn btn-outline-dark">Create</button>
+                        <button type="submit" onClick={(e) => createNewJournal()} className="btn btn-outline-dark">Create</button>
                     </div>
                 </div>
             </div>

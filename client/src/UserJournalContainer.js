@@ -2,18 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import UserJournal from './UserJournal';
 
-function UserJournalContainer(props) {
+function UserJournalContainer({ journals, user }) {
     const [userJournals, setUserJournals] = useState([]);
 
-    let id = props.user.id;
-
-    console.log("check journal props", props);
-
     useEffect(() => {
-        fetch(`/users/${id}`)
+        fetch(`/users/${user.id}`)
             .then((r) => r.json())
             .then((data) => checkUserJournalData(data))
-    }, [id]);
+    }, [user.id]);
 
     function checkUserJournalData(data) {
         if (!!data.journals) {
@@ -23,7 +19,6 @@ function UserJournalContainer(props) {
 
     function renderUserJournals() {
         return userJournals.map((userJournal) => {
-            console.log('checking journal render', userJournal);
             return (
                 <UserJournal 
                     key={userJournal.id}

@@ -41,6 +41,7 @@ function App() {
             moods={moods} 
             content={content} 
             description={description}
+            setDescription={setDescription}
           />} 
         />
         <Route path="/journal" element={

@@ -2,18 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import UserMood from './UserMood';
 
-function UserMoodContainer(props) {
+function UserMoodContainer({moods, user}) {
     const [userMoods, setUserMoods] = useState([]);
-
-    let id = props.user.id;
     
-    console.log("check mood props", props);
-
     useEffect(() => {
-        fetch(`/users/${id}`)
+        fetch(`/users/${user.id}`)
             .then((r) => r.json())
             .then((data) => checkUserMoodData(data)) // {id: 1, user_id: 1, journal_id: 1, description: 'Foggy'}
-    }, [id]);
+    }, [user.id]);
 
     function checkUserMoodData(data) {
         if (!!data.moods) {
@@ -23,7 +19,6 @@ function UserMoodContainer(props) {
 
     function renderUserMoods() {
         return userMoods.map((userMood) => {
-            console.log('checking mood render', userMood);
             return (
                 <UserMood 
                     key={userMood.id}

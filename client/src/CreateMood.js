@@ -1,31 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CreateMood(props) {
-    const navigate = useNavigate();
-    const {
-        description,
-        setDescription,
-        setUser
-    } = props;
+function CreateMood({ setUser }) {
+    let navigate = useNavigate();
 
-    function createNewMood(e, newMoodData) {
-        e.preventDefault();
+    const [description, setDescription] = useState("");
+
+    function createNewMood() {
         fetch("/moods", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ 
-                "descriptions": newMoodData.description
+                description: description
             }),
-        }).then((r) => {
-            if (r.created) {
-                r.json().then((userData) => setUser(userData));
-            }
-        });
-        e.target.reset();
-        navigate('/usermood');
+        })
+        .then(r => r.json())
+        .then(data => {
+            setUser(data);
+            navigate('/usermood')
+        }) 
     }
 
     return (
@@ -37,15 +32,15 @@ function CreateMood(props) {
                         <form className="new-mood-form" onSubmit={(e) => createNewMood(e, {description: description})}>
                             <label htmlFor="today-mood">Today's Mood</label>
                             <textarea
+                                onChange={(e) => setDescription(e.target.value)}
                                 type="text"
                                 className="form-control"
                                 value={description}
                                 placeholder="Enter description"
-                                onChange={(e) => setDescription(e.target.value)}
                                 rows={5}
                             />
                         </form>
-                        <button type="submit" value="create" className="btn btn-outline-dark">Create</button>
+                        <button type="submit" value="create" onClick={(e) => createNewMood()} className="btn btn-outline-dark">Create</button>
                     </div>
                 </div>
             </div>
