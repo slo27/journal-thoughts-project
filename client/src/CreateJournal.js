@@ -25,7 +25,7 @@ function CreateJournal(props) {
             }
         });
         e.target.reset();
-        navigate('/');
+        navigate('/usermood');
     }
 
     return (
