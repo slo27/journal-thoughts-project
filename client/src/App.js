@@ -29,8 +29,8 @@ function App() {
         <Route path="/" element={
           <Home 
             user={user} 
-            moods={moods} j
-            ournals={journals}
+            moods={moods} 
+            journals={journals}
           />} 
         />
         <Route path="/usermood" element={
