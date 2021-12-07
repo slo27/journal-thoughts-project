@@ -23,7 +23,7 @@ function NavBar({ setUser }) {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="mood">Mood Entry</Nav.Link>
                         <Nav.Link as={Link} to="journal">Journal Entry</Nav.Link>
-                        <Nav.Link as={Link} to="usermood">My Entries</Nav.Link>
+                        <Nav.Link as={Link} to="usermood">Entries</Nav.Link>
                         {/* <Nav.Link as={Link} to="userjournal">My Journals</Nav.Link> */}
                         <Nav.Link as={Link} to="me">My Profile</Nav.Link>
                         <Nav.Link as={Link} to="login">Login</Nav.Link>
