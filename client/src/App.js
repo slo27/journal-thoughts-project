@@ -18,13 +18,14 @@ function App() {
   const [journals, setJournals] = useState([]);
   const [moods, setMoods] = useState([]);
   const [description, setDescription] = useState([]);
+  const [content, setContent] = useState([]);
 
   return (
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route path="/usermood" element={<Home user={user} setUser={setUser} moods={moods} setMoods={setMoods} journals={journals} setJournals={setJournals} />} />
-        <Route path="/mood" element={<CreateMood moods={moods} setMoods={setMoods} description={description} setDescription={setDescription}/>} />
+        <Route path="/usermood" element={<Home setUser={setUser} setMoods={setMoods} />} />
+        <Route path="/mood" element={<CreateMood setUser={setUser} moods={moods} setMoods={setMoods} description={description} setDescription={setDescription}/>} />
         <Route path="me" element={<UserProfile />} />
         <Route path="login" element={<Login setUser={setUser}/>} />
         <Route path="/" element={

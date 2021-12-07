@@ -1,23 +1,23 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CreateMood(props) {
+function CreateJournal(props) {
     const navigate = useNavigate();
-    const {
-        description,
-        setDescription,
+    const { 
+        content,
+        setContent,
         setUser
     } = props;
 
-    function createNewMood(e, newMoodData) {
+    function createNewJournal(e, newJournalData) {
         e.preventDefault();
-        fetch("/moods", {
+        fetch("/journals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ 
-                "descriptions": newMoodData.description
+            body: JSON.stringify({
+                "content": newJournalData.content
             }),
         }).then((r) => {
             if (r.created) {
@@ -29,23 +29,23 @@ function CreateMood(props) {
     }
 
     return (
-        <div className="create-mood-wrappers">
-            <h1>Mood Entry</h1>
+        <div className="create-journal-wrappers">
+            <h1>Journal Entry</h1>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-7">
-                        <form className="new-mood-form" onSubmit={(e) => createNewMood(e, {description: description})}>
-                            <label htmlFor="current-mood">Current Mood</label>
+                        <form className="new-journal-form" onSubmit={(e) => createNewJournal(e, {content: content})}>
+                            <label htmlFor="daily-journal">Daily Journal</label>
                             <textarea
                                 type="text"
                                 className="form-control"
-                                value={description}
-                                placeholder="Current Mood"
-                                onChange={(e) => setDescription(e.target.value)}
-                                rows={5}
+                                value={content}
+                                placeholder="Daily Journal"
+                                onChange={(e) => setContent(e.target.value)}
+                                rows={15}
                             />
                         </form>
-                        <button type="submit" value="create" className="btn btn-outline-dark">Create</button>
+                        <button type="submit" className="btn btn-outline-dark">Create</button>
                     </div>
                 </div>
             </div>
@@ -53,4 +53,4 @@ function CreateMood(props) {
     )
 }
 
-export default CreateMood;
+export default CreateJournal;
