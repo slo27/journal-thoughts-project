@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CreateMood({ setUser }) {
+function CreateMood({ user, setUser }) {
     let navigate = useNavigate();
 
     const [description, setDescription] = useState("");
@@ -13,13 +13,14 @@ function CreateMood({ setUser }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ 
-                description: description
+                description: description,
+                user_id: user.id
             }),
         })
         .then(r => r.json())
         .then(data => {
-            setUser(data);
-            navigate('/usermood')
+            console.log(data);
+            navigate('/usermood') // /entries
         }) 
     }
 
