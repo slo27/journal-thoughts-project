@@ -15,7 +15,7 @@ function App() {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [journal, setJournal] = useState([]);
+  const [journals, setJournals] = useState([]);
   const [moods, setMoods] = useState([]);
   const [description, setDescription] = useState([]);
 
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route exact path="/usermood" element={<Home user={user} setUser={setUser} moods={moods} setMoods={setMoods} journal={journal} />} />
+        <Route exact path="/usermood" element={<Home user={user} setUser={setUser} moods={moods} setMoods={setMoods} journals={journals} setJournals={setJournals} />} />
         <Route path="/mood" element={<CreateMood moods={moods} setMoods={setMoods} description={description} setDescription={setDescription}/>} />
         <Route path="me" element={<UserProfile />} />
         <Route exact path="login" element={<Login setUser={setUser}/>} />

@@ -23,7 +23,7 @@ function UserMoodContainer(props) {
 
     function renderUserMoods() {
         return userMoods.map((userMood) => {
-            console.log('checking render', userMood);
+            console.log('checking mood render', userMood);
             return (
                 <UserMood 
                     key={userMood.id}
@@ -34,7 +34,7 @@ function UserMoodContainer(props) {
         })
     }     
 
-    return(
+    return (
         <div className="mood-container">
             <div>{renderUserMoods()}</div>
         </div>
