@@ -7,6 +7,7 @@ import Signup from "./Signup"
 import UserProfile from "./UserProfile";
 import CreateMood from "./CreateMood";
 import CreateJournal from "./CreateJournal";
+import Entries from "./Entries";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,26 +26,54 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser} />
       <Routes>
-        <Route path="/usermood" element={<Home user={user} setUser={setUser} journals={journals} moods={moods} content={content} description={description}/>} />
-        <Route path="/journal" element={<CreateJournal setUser={setUser} setJournals={setJournals} setContent={setContent}/>} />
-        <Route path="/mood" element={<CreateMood setUser={setUser} setMoods={setMoods} setDescription={setDescription}/>} />
+        <Route path="/" element={
+          <Home 
+            user={user} 
+            moods={moods} 
+            journals={journals}
+          />} 
+        />
+        <Route path="/usermood" element={
+          <Entries 
+            user={user} 
+            setUser={setUser} 
+            journals={journals} 
+            moods={moods} 
+            content={content} 
+            description={description}
+          />} 
+        />
+        <Route path="/journal" element={
+          <CreateJournal 
+            setUser={setUser} 
+            setJournals={setJournals} 
+            setContent={setContent} 
+          />} 
+        />
+        <Route path="/mood" element={
+          <CreateMood 
+            setUser={setUser} 
+            setMoods={setMoods} 
+            setDescription={setDescription}
+          />} 
+        />
         <Route path="me" element={<UserProfile />} />
         <Route path="login" element={<Login setUser={setUser}/>} />
-        <Route path="/" element={
+        <Route path="/signup" element={
           <Signup 
-          username={username} 
-          password={password}
-          password_confirmation={password_confirmation}
-          first_name={first_name}
-          last_name={last_name}
-          email={email}
-          setUsername={setUsername}
-          setPassword={setPassword} 
-          setPasswordConfirmation={setPasswordConfirmation}
-          setFirstName={setFirstName}
-          setLastName={setLastName}
-          setEmail={setEmail}
-          setUser={setUser} 
+            username={username} 
+            password={password}
+            password_confirmation={password_confirmation}
+            first_name={first_name}
+            last_name={last_name}
+            email={email}
+            setUsername={setUsername}
+            setPassword={setPassword} 
+            setPasswordConfirmation={setPasswordConfirmation}
+            setFirstName={setFirstName}
+            setLastName={setLastName}
+            setEmail={setEmail}
+            setUser={setUser} 
           />} 
         />
       </Routes>
