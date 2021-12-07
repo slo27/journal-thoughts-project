@@ -14,8 +14,6 @@ function NavBar({ setUser }) {
         navigate('/login');
     }
 
-    
-
     return (
         <Navbar bg="light" expand="lg">
             <Container>
