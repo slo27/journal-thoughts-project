@@ -35,12 +35,12 @@ function CreateMood(props) {
                 <div className="row justify-content-center">
                     <div className="col-7">
                         <form className="new-mood-form" onSubmit={(e) => createNewMood(e, {description: description})}>
-                            <label htmlFor="current-mood">Current Mood</label>
+                            <label htmlFor="today-mood">Today's Mood</label>
                             <textarea
                                 type="text"
                                 className="form-control"
                                 value={description}
-                                placeholder="Current Mood"
+                                placeholder="Enter description"
                                 onChange={(e) => setDescription(e.target.value)}
                                 rows={5}
                             />

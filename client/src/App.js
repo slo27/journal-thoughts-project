@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -6,6 +6,7 @@ import Login from "./Login";
 import Signup from "./Signup"
 import UserProfile from "./UserProfile";
 import CreateMood from "./CreateMood";
+import CreateJournal from "./CreateJournal";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,8 +26,9 @@ function App() {
       <NavBar setUser={setUser} />
       <Routes>
         <Route path="/usermood" element={<Home setUser={setUser} setMoods={setMoods} />} />
+        <Route path="/journal" element={<CreateJournal setUser={setUser} journals={journals} setJournals={setJournals} content={content} setContent={setContent}/>} />
         <Route path="/mood" element={<CreateMood setUser={setUser} moods={moods} setMoods={setMoods} description={description} setDescription={setDescription}/>} />
-        <Route path="me" element={<UserProfile />} />
+        <Route path="me" element={<UserProfile user={user} />} />
         <Route path="login" element={<Login setUser={setUser}/>} />
         <Route path="/" element={
           <Signup 

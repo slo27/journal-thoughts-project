@@ -35,12 +35,12 @@ function CreateJournal(props) {
                 <div className="row justify-content-center">
                     <div className="col-7">
                         <form className="new-journal-form" onSubmit={(e) => createNewJournal(e, {content: content})}>
-                            <label htmlFor="daily-journal">Daily Journal</label>
+                            <label htmlFor="today-journal">Today's entry</label>
                             <textarea
                                 type="text"
                                 className="form-control"
                                 value={content}
-                                placeholder="Daily Journal"
+                                placeholder="Enter content"
                                 onChange={(e) => setContent(e.target.value)}
                                 rows={15}
                             />
