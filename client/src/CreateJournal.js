@@ -35,7 +35,7 @@ function CreateJournal(props) {
                 <div className="row justify-content-center">
                     <div className="col-7">
                         <form className="new-journal-form" onSubmit={(e) => createNewJournal(e, {content: content})}>
-                            <label htmlFor="today-journal">Today's entry</label>
+                            <label htmlFor="today-journal">Today's Journal</label>
                             <textarea
                                 type="text"
                                 className="form-control"

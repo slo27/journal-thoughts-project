@@ -1,15 +1,15 @@
-import UserMoodContainer from './UserMoodContainer';
-import UserJournalContainer from './UserJournalContainer';
+import CreateJournal from './CreateJournal';
+import CreateMood from './CreateMood';
 
-function Home({moods, journals, user}) {
+function Home({ user, moods, journals }) {
     return (
-        <div>
-            <div className="row align-items-start">
-                <div className="col">
-                    <UserMoodContainer moods={moods} user={user}/>
+        <div className="create-mood-journal">
+            <div className="write-entries-container">
+                <div className="col-7">
+                    <CreateMood user={user} moods={moods} />
                 </div>
-                <div className="col">
-                    <UserJournalContainer journals={journals} user={user} />
+                <div className="col-7">
+                    <CreateJournal user={user} journals={journals} />
                 </div>
             </div>
         </div>
