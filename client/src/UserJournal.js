@@ -1,10 +1,9 @@
 function UserJournal(props) {
     return(
-        <div>
-            <div className="card">
+        <div className="journal-wrapper">
+            <div className="hover-box-wrapper">
                 <div className="card-body">
-                    <p>{props.journalContent}</p>
-                    <p>{props.timeStamps}</p>
+                    <p className="journal-text">{props.journalContent}</p>
                 </div>
             </div>
         </div>

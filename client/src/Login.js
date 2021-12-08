@@ -51,7 +51,10 @@ function Login({ setUser }) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <button type="submit" class="btn btn-outline-dark">Login</button>
+                <br/>
+                <div className="text-center">
+                    <button type="submit" class="btn btn-dark">Login</button>
+                </div>
                 <div className="signup-wrapper">
                     <p>
                         Don't have an account? <Link to="/signup">Sign Up</Link>

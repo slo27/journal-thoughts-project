@@ -2,9 +2,9 @@ import UserJournalContainer from './UserJournalContainer';
 
 function Entries({ journals, user }) {
     return (
-        <div>
-            <div className="row justify-content-center">
-                <div className="col-md-7">
+        <div className="container">
+            <div class="row justify-content-center">
+                <div className="col-7">
                     <UserJournalContainer journals={journals} user={user} />
                 </div>
             </div>

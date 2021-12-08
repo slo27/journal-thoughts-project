@@ -5,7 +5,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup"
 import UserProfile from "./UserProfile";
-import Entries from "./Entries";
+import Entries from "./Entries"; 
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,7 +25,7 @@ function App() {
         r.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  }, []); 
 
   return (
     <div className="App">

@@ -1,0 +1,58 @@
+body {
+    background-color: #9197ae;
+}
+
+input[type="text"], textarea {
+    background-color : #f8f3f0 !important;
+}
+
+textarea {
+    max-width: 100%;
+    width: 91%; 
+    margin-right: auto;
+    margin-left: 0px;
+    min-height: 140px;
+}
+
+.color-nav {
+    background-color: #cbdbf7;
+}
+
+.card-body {
+    background-color: #f8f3f0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.journal-wrapper p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.journal-wrapper {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.hover-box-wrapper:hover {
+    opacity: 1;
+    font-size: 8px;
+}
+
+.hover-box-wrapper:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.hover-box-wrapper {
+    position: relative;
+}
+
+.hover-box-wrapper:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(170, 183, 240)
+}
