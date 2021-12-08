@@ -3,8 +3,8 @@ function UserJournal(props) {
         <div>
             <div className="card">
                 <div className="card-body">
-                    <p>{props.timeStamps}</p>
                     <p>{props.journalContent}</p>
+                    <p>{props.timeStamps}</p>
                 </div>
             </div>
         </div>
