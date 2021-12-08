@@ -26,7 +26,7 @@ class JournalsController < ApplicationController
     end
     
     def journal_params
-        params.permit(:user_id, :timestamps, :content)
+        params.permit(:user_id, :timestamps, :content, :journal)
     end
     
 end
