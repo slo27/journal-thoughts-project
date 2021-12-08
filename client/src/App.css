@@ -1,0 +1,84 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+    color: #000000;
+}
+
+body {
+    background-color: #9197ae;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"], textarea {
+    background-color : #f8f3f0 !important;
+}
+
+textarea {
+    max-width: 100%;
+    width: 91%; 
+    margin-right: auto;
+    margin-left: 0px;
+    min-height: 140px;
+    display: block;
+}
+
+.color-nav {
+    background-color: #cbdbf7;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    background-color: #f8f3f0;
+}
+
+/* p {
+    width: 13em;
+    margin: 2px;
+} */
+
+/* .journal-wrapper p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+} */
+
+/* .journal-wrapper:hover p {
+    overflow: visible;
+} */
+
+.hover-box-wrapper {
+    background-color: #f8f3f0;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.hover-box-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    /* height: 100px; */
+}
+
+.hover-box-wrapper:hover {
+    text-overflow: initial;
+    white-space: pre-line;
+    display: block;
+    /* height: 100%; */
+}
+
+.hover-box-wrapper:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.hover-box-wrapper:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(250, 193, 198);
+}
+

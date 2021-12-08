@@ -35,7 +35,6 @@ function Login({ setUser }) {
                         id="username"
                         autoComplete="off"
                         value={username}
-                        placeholder="Enter Username"
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
@@ -47,14 +46,16 @@ function Login({ setUser }) {
                         id="password"
                         autoComplete="current-password"
                         value={password}
-                        placeholder="Enter Password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <button type="submit" class="btn btn-outline-dark">Login</button>
+                <br/>
+                <div className="text-center">
+                    <button type="submit" class="btn btn-dark">Login</button>
+                </div>
                 <div className="signup-wrapper">
                     <p>
-                        Don't have an account? <Link to="/signup">Sign Up</Link>
+                        Don't have an account? <Link className="link-dark" to="/signup">Sign Up</Link>
                     </p>
                 </div>
             </form>

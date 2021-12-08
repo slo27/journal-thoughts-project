@@ -57,7 +57,6 @@ function Signup(props) {
                             id="username"
                             autoComplete="off"
                             value={username}
-                            placeholder="Username"
                             onChange={(e) => setUsername(e.target.value)}
                             />
                     </div>
@@ -69,7 +68,6 @@ function Signup(props) {
                             id="email"
                             autoComplete="off"
                             value={email}
-                            placeholder="Email address"
                             onChange={(e) => setEmail(e.target.value)}
                             />
                     </div>
@@ -83,7 +81,6 @@ function Signup(props) {
                             id="password"
                             autoComplete="off"
                             value={password}
-                            placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
                             />
                     </div>
@@ -95,7 +92,6 @@ function Signup(props) {
                             id="password-confirmation"
                             autoComplete="off"
                             value={password_confirmation}
-                            placeholder="Password Confirmation"
                             onChange={(e) => setPasswordConfirmation(e.target.value)}
                             />
                     </div>
@@ -109,7 +105,6 @@ function Signup(props) {
                             id="first_name"
                             autoComplete="off"
                             value={first_name}
-                            placeholder="First Name"
                             onChange={(e) => setFirstName(e.target.value)}
                             />
                     </div>
@@ -121,16 +116,17 @@ function Signup(props) {
                             id="last_name"
                             autoComplete="off"
                             value={last_name}
-                            placeholder="Last Name"
                             onChange={(e) => setLastName(e.target.value)}
                             />
                     </div>
                 </div>
-                {/* button is reverting to primary on refresh? */}
-                <button type="submit" className="btn btn-outline-dark">Sign Up</button>
+                <br/>
+                <div className="text-center">
+                    <button type="submit" className="btn btn-dark">Sign Up</button>
+                </div>
                 <div className="login-wrapper">
                     <p>
-                        Already have an account? <Link to="/login">Login</Link>
+                        Already have an account? <Link className="link-dark" to="/login">Login</Link>
                     </p>
                 </div>
             </form>

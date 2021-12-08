@@ -15,8 +15,8 @@ function NavBar({ setUser }) {
     }
 
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
+        <Navbar className="color-nav" expand="lg">
+            <Container className="journal-header">
                 <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
                 <Navbar.Toggle aria-controls="journal-navbar" />
                 <Navbar.Collapse id="journal-navbar">
