@@ -4,7 +4,7 @@ import UserJournal from './UserJournal';
 function UserJournalContainer({ user }) {
     function renderUserJournals() {
         console.log(user);
-        return user?.journals.map((userJournal) => { // optional-chaining
+        return user?.journals.reverse().map((userJournal) => { // optional-chaining // reverse data entry
             return (
                 <UserJournal 
                     key={userJournal.id}

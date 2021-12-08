@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 function CreateJournal({ user }) {
     const navigate = useNavigate();
-
     const [content, setContent] = useState("");
-
+    const [mood, setMood] = useState("");
+    
     function createNewJournal() {
         fetch("/journals", {
             method: "POST",
@@ -13,17 +13,19 @@ function CreateJournal({ user }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
+                "user_id": user.id,
                 "content": content,
-                "user_id": user.id
+                "mood": mood
             }),
         })
         .then(r => r.json())
         .then(data => {
             console.log(data);
             console.log(user);
-            navigate('/usermood')
         }) 
+        navigate('/usermood')
     }
+
 
     return (
         <div className="create-journal-wrappers">
@@ -32,13 +34,22 @@ function CreateJournal({ user }) {
                 <div className="row justify-content-center">
                     <div className="col-7">
                         <form className="new-journal-form" onSubmit={(e) => createNewJournal(e, {content: content})}>
-                            <label htmlFor="today-journal">Today's Journal</label>
+                            <label htmlFor="today-mood">Current Mood</label>
+                            <textarea
+                                onChange={(e) => setMood(e.target.value)}
+                                type="text"
+                                className="form-control"
+                                value={mood}
+                                placeholder="description"
+                                rows={5}
+                            />
+                            <label htmlFor="today-journal">Daily Journal</label>
                             <textarea
                                 onChange={(e) => setContent(e.target.value)}
                                 type="text"
                                 className="form-control"
                                 value={content}
-                                placeholder="Enter content"
+                                placeholder="content"
                                 rows={15}
                             />
                         </form>
