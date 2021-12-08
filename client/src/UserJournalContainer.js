@@ -1,29 +1,10 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import UserJournal from './UserJournal';
 
-function UserJournalContainer(props) {
-    const [userJournals, setUserJournals] = useState([]);
-
-    let id = props.user.id;
-
-    console.log("check journal props", props);
-
-    useEffect(() => {
-        fetch(`/users/${id}`)
-            .then((r) => r.json())
-            .then((data) => checkUserJournalData(data))
-    }, [id]);
-
-    function checkUserJournalData(data) {
-        if (!!data.journals) {
-            setUserJournals(data.journals);
-        }
-    }
-
+function UserJournalContainer({ user }) {
     function renderUserJournals() {
-        return userJournals.map((userJournal) => {
-            console.log('checking journal render', userJournal);
+        console.log(user);
+        return user?.journals.reverse().map((userJournal) => { // optional-chaining // reverse data entry
             return (
                 <UserJournal 
                     key={userJournal.id}

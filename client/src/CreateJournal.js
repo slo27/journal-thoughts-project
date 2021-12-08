@@ -1,32 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CreateJournal(props) {
+function CreateJournal({ user }) {
     const navigate = useNavigate();
-    const { 
-        content,
-        setContent,
-        setUser
-    } = props;
-
-    function createNewJournal(e, newJournalData) {
-        e.preventDefault();
+    const [content, setContent] = useState("");
+    const [mood, setMood] = useState("");
+    
+    function createNewJournal() {
         fetch("/journals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                "content": newJournalData.content
+                "user_id": user.id,
+                "content": content,
+                "mood": mood
             }),
-        }).then((r) => {
-            if (r.created) {
-                r.json().then((userData) => setUser(userData));
-            }
-        });
-        e.target.reset();
-        navigate('/usermood');
+        })
+        .then(r => r.json())
+        .then(data => {
+            console.log(data);
+            console.log(user);
+        }) 
+        navigate('/usermood')
     }
+
 
     return (
         <div className="create-journal-wrappers">
@@ -35,17 +34,26 @@ function CreateJournal(props) {
                 <div className="row justify-content-center">
                     <div className="col-7">
                         <form className="new-journal-form" onSubmit={(e) => createNewJournal(e, {content: content})}>
-                            <label htmlFor="today-journal">Today's Journal</label>
+                            <label htmlFor="today-mood">Current Mood</label>
                             <textarea
+                                onChange={(e) => setMood(e.target.value)}
+                                type="text"
+                                className="form-control"
+                                value={mood}
+                                placeholder="description"
+                                rows={5}
+                            />
+                            <label htmlFor="today-journal">Daily Journal</label>
+                            <textarea
+                                onChange={(e) => setContent(e.target.value)}
                                 type="text"
                                 className="form-control"
                                 value={content}
-                                placeholder="Enter content"
-                                onChange={(e) => setContent(e.target.value)}
+                                placeholder="content"
                                 rows={15}
                             />
                         </form>
-                        <button type="submit" className="btn btn-outline-dark">Create</button>
+                        <button type="submit" onClick={(e) => createNewJournal()} className="btn btn-outline-dark">Create</button>
                     </div>
                 </div>
             </div>
