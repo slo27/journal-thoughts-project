@@ -4,11 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function CreateJournal({ user }) {
     const navigate = useNavigate();
     const [content, setContent] = useState("");
-    const [timestamp, setTimestamp] = useState("");
-    const date = new Date();
-    const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
-
-    
+ 
     function createNewJournal() {
         fetch("/journals", {
             method: "POST",
@@ -17,8 +13,7 @@ function CreateJournal({ user }) {
             },
             body: JSON.stringify({
                 "user_id": user.id,
-                "content": content,
-                "timestamps": timestamp(month,day, year)
+                "content": content
             }),
         })
         .then(r => r.json())
