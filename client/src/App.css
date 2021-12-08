@@ -1,5 +1,15 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+    color: #000000;
+}
+
 body {
     background-color: #9197ae;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
 }
 
 input[type="text"], textarea {
@@ -12,19 +22,16 @@ textarea {
     margin-right: auto;
     margin-left: 0px;
     min-height: 140px;
+    display: block;
 }
 
 .color-nav {
     background-color: #cbdbf7;
+    margin-bottom: 10px;
 }
 
 .card-body {
     background-color: #f8f3f0;
-}
-
-h1 {
-    display: flex;
-    justify-content: center;
 }
 
 .journal-wrapper p{
@@ -34,14 +41,22 @@ h1 {
     width: 100%;
 }
 
-.journal-wrapper {
+.journal-wrapper:hover p {
+    overflow: visible;
+}
+
+.hover-box-wrapper {
+    position: relative;
     border-radius: 10px;
     padding: 20px;
+    background-color: #f8f3f0;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .hover-box-wrapper:hover {
     opacity: 1;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .hover-box-wrapper:hover {
@@ -49,10 +64,7 @@ h1 {
     z-index: 1;
 }
 
-.hover-box-wrapper {
-    position: relative;
+.hover-box-wrapper:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(250, 193, 198);
 }
 
-.hover-box-wrapper:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em rgb(170, 183, 240)
-}
