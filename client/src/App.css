@@ -34,29 +34,43 @@ textarea {
     background-color: #f8f3f0;
 }
 
-.journal-wrapper p{
+/* p {
+    width: 13em;
+    margin: 2px;
+} */
+
+/* .journal-wrapper p{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
+} */
+
+/* .journal-wrapper:hover p {
+    overflow: visible;
+} */
+
+.hover-box-wrapper {
+    background-color: #f8f3f0;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 10px;
     width: 100%;
 }
 
-.journal-wrapper:hover p {
-    overflow: visible;
-}
-
 .hover-box-wrapper {
-    position: relative;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #f8f3f0;
-    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-align: center;
+    /* height: 100px; */
 }
 
 .hover-box-wrapper:hover {
-    opacity: 1;
-    font-size: 10px;
+    text-overflow: initial;
+    white-space: pre-line;
+    display: block;
+    /* height: 100%; */
 }
 
 .hover-box-wrapper:hover {
